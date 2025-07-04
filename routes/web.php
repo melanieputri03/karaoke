@@ -33,4 +33,7 @@ Route::get('/', function () {
 // Route::get('/', [HomeController::class, 'index']);
 // Route::get('/contact', [HomeController::class, 'contact']);
 
-Route::get('/listproduk', [ListProdukController::class, 'produk']);
+Route::get('/produk', [ListProdukController::class, 'index'])->name('produk.index');
+Route::post('/produk/simpan', [ListProdukController::class, 'simpan'])->name('produk.simpan');
+Route::put('/produk/{id}', [ListProdukController::class, 'update'])->name('produk.update');
+Route::delete('/produk/{id}', [ListProdukController::class, 'delete'])->name('produk.delete');
